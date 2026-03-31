@@ -1,6 +1,9 @@
 import {Tabs} from "expo-router";
 
 const TabLayout = () => {
+
+    // Just need to make a commit hehe
+
     return (
         <Tabs screenOptions={{headerShown: false}}>
             <Tabs.Screen name="index" options={{title: "Home"}}/>
