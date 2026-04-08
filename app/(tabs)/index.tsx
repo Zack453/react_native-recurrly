@@ -13,6 +13,9 @@ import UpComingSubscriptionCard from "@/components/UpComingSubscriptionCard";
 const SafeAreaView = styled(RNSafeAreaView);
 
 export default function App() {
+
+    // Change image to a perosnal avatar
+
     return (
         <SafeAreaView className="flex-1 bg-background p-5">
 
