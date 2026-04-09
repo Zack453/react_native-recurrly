@@ -4,6 +4,8 @@ import {useFonts} from "expo-font";
 import {useEffect} from "react";
 import {StatusBar} from "expo-status-bar";
 
+ SplashScreen.preventAutoHideAsync();
+
 export default function RootLayout() {
 
     const [fontsLoaded] = useFonts({
