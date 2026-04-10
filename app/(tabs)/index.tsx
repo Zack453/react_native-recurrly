@@ -14,6 +14,8 @@ import {useState} from "react";
 
 const SafeAreaView = styled(RNSafeAreaView);
 
+// useless commit
+
 export default function App() {
 
     const [expandedSubscriptionId, setExpandedSubscriptionId] = useState<string | null>(null);
