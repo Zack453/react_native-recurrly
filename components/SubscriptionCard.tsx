@@ -7,6 +7,7 @@ import clsx from "clsx";
 const SubscriptionCard = ({name, price, currency, icon, billing, color,  category, plan, renewalDate, expanded, onPress, paymentMethod, startDate, status} : SubscriptionCardProps) => {
 
     return (
+
         <Pressable onPress={onPress} className={clsx("sub-card", expanded ? "sub-card-expanded" : "bg-card" )}  style={!expanded && color ? {backgroundColor: color}: undefined}>
             <View className="sub-head">
                 <View className="sub-main">
