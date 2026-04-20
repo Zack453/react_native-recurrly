@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:ibb.co)",
+      "Bash(npx expo:*)"
+    ]
+  }
+}
