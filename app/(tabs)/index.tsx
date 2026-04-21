@@ -25,7 +25,8 @@ export default function App() {
         <SafeAreaView className="flex-1 bg-background p-5">
 
             <FlatList
-                ListHeaderComponent={() => <>
+                ListHeaderComponent={() =>
+                    <>
                     <View className="home-header">
                         <View className="home-user">
                             <Image source={images.catavatar} className="home-avatar"/>
