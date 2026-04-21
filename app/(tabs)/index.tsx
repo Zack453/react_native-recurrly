@@ -1,5 +1,5 @@
 import "@/global.css"
-import {FlatList, Image, Text, View} from "react-native";
+import {FlatList, Image, Pressable, Text, View} from "react-native";
 import {SafeAreaView as RNSafeAreaView} from "react-native-safe-area-context";
 import {styled} from "nativewind";
 import images from "@/constants/images";
@@ -11,6 +11,8 @@ import ListHeading from "@/components/ListHeading";
 import UpComingSubscriptionCard from "@/components/UpComingSubscriptionCard";
 import SubscriptionCard from "@/components/SubscriptionCard";
 import {useState} from "react";
+import { useUser } from '@clerk/expo';
+
 
 const SafeAreaView = styled(RNSafeAreaView);
 
@@ -18,23 +20,33 @@ const SafeAreaView = styled(RNSafeAreaView);
 
 export default function App() {
 
+    const { user } = useUser();
+    const [isModalVisible, setIsModalVisible] = useState(false);
     const [expandedSubscriptionId, setExpandedSubscriptionId] = useState<string | null>(null);
+
+    const displayName = user?.firstName || user?.fullName || user?.emailAddresses[0]?.emailAddress || 'User';
+
 
     return (
 
         <SafeAreaView className="flex-1 bg-background p-5">
 
             <FlatList
-                ListHeaderComponent={() =>
+                ListHeaderComponent={() => (
                     <>
-                    <View className="home-header">
-                        <View className="home-user">
-                            <Image source={images.catavatar} className="home-avatar"/>
-                            <Text className="home-user-name">{HOME_USER.name}</Text>
-                        </View>
+                        <View className="home-header">
+                            <View className="home-user">
+                                <Image
+                                    source={user?.imageUrl ? { uri: user.imageUrl } : images.catavatar}
+                                    className="home-avatar"
+                                />
+                                <Text className="home-user-name">{displayName}</Text>
+                            </View>
 
-                        <Image source={icons.add} className="home-add-icon"/>
-                    </View>
+                            <Pressable onPress={() => setIsModalVisible(true)}>
+                                <Image source={icons.add} className="home-add-icon" />
+                            </Pressable>
+                        </View>
 
                     <View className="home-balance-card">
                         <Text className="home-balance-label">Balance</Text>
@@ -60,7 +72,7 @@ export default function App() {
 
                     <ListHeading title="All Subscriptions"/>
                 </>
-            }
+            )}
                 data={HOME_SUBSCRIPTIONS}
                 keyExtractor={(item) => item.id}
                 renderItem={({item}) => (

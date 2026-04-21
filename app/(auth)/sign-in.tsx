@@ -1,13 +1,5 @@
 import React, {useState} from "react";
-import {
-    KeyboardAvoidingView,
-    Platform,
-    Pressable,
-    ScrollView,
-    Text,
-    TextInput,
-    View,
-} from "react-native";
+import { KeyboardAvoidingView,Platform,Pressable,ScrollView,Text,TextInput,View,} from "react-native";
 import {SafeAreaView as RNSafeAreaView} from "react-native-safe-area-context";
 import {styled} from "nativewind";
 import {useSignIn} from "@clerk/expo";
@@ -55,8 +47,10 @@ export default function SignIn() {
 
     const navigate = ({session, decorateUrl}: {session: any; decorateUrl: (url: string) => string}) => {
         if (session?.currentTask) return;
-        const url = decorateUrl("/");
+        const url = decorateUrl("/(tabs)");
         if (url.startsWith("http")) return;
+
+        const resolvedUrl = url === "/" ? "/(tabs)" : url;
         router.replace(url as Href);
     };
 
