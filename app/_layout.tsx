@@ -15,7 +15,6 @@ if (!publishableKey) {
 }
 
 function RootLayoutContent() {
-
         const { isLoaded: authLoaded } = useAuth();
 
         const [fontsLoaded] = useFonts({
