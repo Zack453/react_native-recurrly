@@ -46,4 +46,5 @@ export default function RootLayout() {
             <StatusBar style="dark"/>
             <RootLayoutContent/>
         </ClerkProvider>
-        )};
+        )
+};
