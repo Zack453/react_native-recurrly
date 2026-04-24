@@ -9,6 +9,7 @@ import { usePostHog } from 'posthog-react-native';
 const SafeAreaView = styled(RNSafeAreaView);
 
 const SignIn = () => {
+
     const { signIn, errors, fetchStatus } = useSignIn();
     const router = useRouter();
     const posthog = usePostHog();
