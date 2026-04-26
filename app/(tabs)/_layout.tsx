@@ -18,7 +18,9 @@ const TabIcon = ({focused, icon}: TabIconProps) => {
         </View>
     );
 };
+
 const TabLayout = () => {
+
     const { isSignedIn, isLoaded } = useAuth();
     const insets = useSafeAreaInsets();
 
