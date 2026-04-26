@@ -4,7 +4,6 @@ import { styled } from "nativewind";
 import { useClerk, useUser } from '@clerk/expo';
 import images from '@/constants/images';
 import { usePostHog } from 'posthog-react-native';
-
 const SafeAreaView = styled(RNSafeAreaView);
 
 const Settings = () => {
@@ -66,7 +65,7 @@ const Settings = () => {
                 </View>
             </View>
 
-            {/* Sign-Out Button */}
+            {/* Sign Out Button */}
             <Pressable
                 className="auth-button bg-destructive"
                 onPress={handleSignOut}
