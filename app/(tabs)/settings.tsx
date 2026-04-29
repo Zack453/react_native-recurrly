@@ -7,6 +7,7 @@ import { usePostHog } from 'posthog-react-native';
 const SafeAreaView = styled(RNSafeAreaView);
 
 const Settings = () => {
+
     const { signOut } = useClerk();
     const { user } = useUser();
     const posthog = usePostHog();
