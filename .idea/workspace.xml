@@ -64,6 +64,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\react-native-recurrly-frontend\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -94,6 +95,9 @@
       <workItem from="1777552896216" duration="232000" />
       <workItem from="1777625160973" duration="455000" />
       <workItem from="1777726670008" duration="13000" />
+      <workItem from="1777834436589" duration="72000" />
+      <workItem from="1778349107140" duration="126000" />
+      <workItem from="1778349779318" duration="26000" />
     </task>
     <servers />
   </component>
